@@ -16,3 +16,4 @@ test('renders Display', () => {
     const element = wrapper.getByTestId('display')
     expect(element).toBeVisible();
 });
+
