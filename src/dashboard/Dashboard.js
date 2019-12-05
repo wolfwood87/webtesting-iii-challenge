@@ -21,6 +21,7 @@ class Dashboard extends React.Component {
           closed={closed}
           toggleLocked={this.toggleLocked}
           toggleClosed={this.toggleClosed}
+          
         />
       </>
     );
