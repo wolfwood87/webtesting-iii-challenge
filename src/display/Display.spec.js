@@ -19,11 +19,18 @@ test('displays if gate is opened/closed', () => {
 
 test('displays closed if closed prop is true', () => {
     const wrapper = rtl.render(<Display closed={true}/>);
-    const defaultClosed = wrapper.getByTestId(/closed/i)
     const element = wrapper.getByText(/Closed/i);
-    expect(defaultClosed).not.toEqual(element)
+    expect(element).toBeVisible();
 });
 
 test('displays locked if locked prop is true', () => {
+    const wrapper = rtl.render(<Display locked={true}/>);
+    const element = wrapper.getByText("Locked");
+    expect(element).toBeVisible();
+});
 
+test('when locked use red-led class', () => {
+    const wrapper = rtl.render(<Display locked={true}/>);
+    const element = wrapper.getByText("Locked");
+    expect(element).toHaveClass('red-led');
 });
