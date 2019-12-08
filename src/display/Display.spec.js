@@ -34,3 +34,21 @@ test('when locked use red-led class', () => {
     const element = wrapper.getByText("Locked");
     expect(element).toHaveClass('red-led');
 });
+
+test('when closed use red-led class', () => {
+    const wrapper = rtl.render(<Display closed={true}/>);
+    const element = wrapper.getByText("Closed");
+    expect(element).toHaveClass('red-led');
+});
+
+test('when unlocked use green-led class', () => {
+    const wrapper = rtl.render(<Display locked={false}/>);
+    const element = wrapper.getByText("Unlocked");
+    expect(element).toHaveClass('green-led');
+});
+
+test('when open use green-led class', () => {
+    const wrapper = rtl.render(<Display closed={false}/>);
+    const element = wrapper.getByText("Open");
+    expect(element).toHaveClass('green-led');
+});
